@@ -59,11 +59,11 @@ const Home = () => {
           loop
           muted
           playsInline
-          src="/model3dvideo.mp4"
+          src="/bgvideo1.mp4"
         />
 
         {/* Hero Content */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-black text-center px-6">
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-6">
           <AnimatePresence mode="wait">
             <motion.h1
               key={texts[textIndex]}

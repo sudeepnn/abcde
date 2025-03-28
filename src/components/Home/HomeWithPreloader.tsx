@@ -3,16 +3,22 @@ import Home from "./Home";
 import Preloader from "./Preloader";
 
 const HomeWithPreloader = () => {
-  const [showPreloader, setShowPreloader] = useState(true);
+  const [showPreloader, setShowPreloader] = useState(
+    !localStorage.getItem("hasVisited")
+  );
 
   useEffect(() => {
-    setTimeout(() => setShowPreloader(false), 6000); // 4s delay + 2s animation
-  }, []);
+    if (showPreloader) {
+      setTimeout(() => {
+        setShowPreloader(false);
+        localStorage.setItem("hasVisited", "true");
+      }, 6000); // 4s delay + 2s animation
+    }
+  }, [showPreloader]);
 
   return (
     <div className="relative">
       <Home />
-
       {showPreloader && <Preloader />}
     </div>
   );

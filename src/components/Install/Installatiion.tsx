@@ -1,11 +1,40 @@
 
 // import Navbar from '../Navbar/Navbar'
+import { useRef, useEffect, RefObject } from 'react';
+import { useLocation } from 'react-router-dom';
 import Footer from '../Footer/Footer'
+import Navbar from '../Navbar/Navbar';
 
 const Installatiion = () => {
+  const overviewRef = useRef<HTMLDivElement>(null);
+  const productRef = useRef<HTMLDivElement>(null);
+  const solutionRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
+  const location = useLocation();
+
+  useEffect(() => {
+      if (location.state?.scrollTo) {
+        const sectionRef =
+          location.state.scrollTo === "overview"
+            ? overviewRef
+            : location.state.scrollTo === "product"
+            ? productRef
+            : location.state.scrollTo === "solution"
+            ? solutionRef
+            : contactRef;
+    
+        setTimeout(() => {
+          sectionRef.current?.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    }, [location]);
+
   return (
     <>
-        {/* <Navbar ></Navbar> */}
+        <Navbar overviewRef={overviewRef as RefObject<HTMLDivElement>} 
+                 productRef={productRef as RefObject<HTMLDivElement>}
+                 solutionRef={solutionRef as RefObject<HTMLDivElement>}
+                 contactRef={contactRef as RefObject<HTMLDivElement>} ></Navbar>
         <div className="bg-gray-100 p-6 py-20">
       <div className="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg">
         <h1 className="text-3xl font-bold text-gray-800 mb-4">
