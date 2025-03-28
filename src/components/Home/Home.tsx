@@ -12,7 +12,7 @@ import { useLocation } from "react-router-dom";
 
 const Home = () => {
   const [textIndex, setTextIndex] = useState(0);
-  const texts = ["ABCDE", "Any Body Can Design Electronics"];
+  const texts = ["ABCDE", "Any Buddy Can Design Electronics"];
   const overviewRef = useRef<HTMLDivElement>(null);
   const productRef = useRef<HTMLDivElement>(null);
   const solutionRef = useRef<HTMLDivElement>(null);
