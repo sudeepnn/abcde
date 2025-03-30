@@ -60,6 +60,9 @@ const CourseEnrollment = () => {
       setTimeout(() => {
         sectionRef.current?.scrollIntoView({ behavior: "smooth" });
       }, 100);
+    } else {
+      // Scroll to the top when no specific section is provided
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   }, [location]);
 
