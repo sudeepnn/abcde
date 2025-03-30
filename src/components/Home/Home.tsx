@@ -66,7 +66,7 @@ const Home = () => {
           loop
           muted
           playsInline
-          src="/bgvideo1.mp4"
+          src="/mainvideo.mp4"
         />
 
         {/* Hero Content */}
