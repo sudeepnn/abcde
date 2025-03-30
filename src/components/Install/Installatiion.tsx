@@ -10,6 +10,7 @@ const Installatiion = () => {
   const productRef = useRef<HTMLDivElement>(null);
   const solutionRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
+  const parentcompanyRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -21,6 +22,8 @@ const Installatiion = () => {
             ? productRef
             : location.state.scrollTo === "solution"
             ? solutionRef
+            : location.state.scrollTo === "parentcompany"
+          ? parentcompanyRef
             : contactRef;
     
         setTimeout(() => {
@@ -80,7 +83,7 @@ const Installatiion = () => {
       </div>
     </div>  
 
-    <Footer></Footer>  
+    <Footer parentcompanyRef={parentcompanyRef as RefObject<HTMLDivElement>}></Footer>  
     </>
   )
 }

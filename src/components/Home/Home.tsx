@@ -9,6 +9,9 @@ import { User, Zap, Code2 } from "lucide-react";
 import FlipCard from "./Productfilp";
 import BlogSection from "../Blog/BlogSection";
 import { useLocation } from "react-router-dom";
+import ParentCompanySection from "./ParentCompanySection";
+
+
 
 const Home = () => {
   const [textIndex, setTextIndex] = useState(0);
@@ -17,6 +20,7 @@ const Home = () => {
   const productRef = useRef<HTMLDivElement>(null);
   const solutionRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
+  const parentcompanyRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
   useEffect(() => {
     const interval = setInterval(() => {
@@ -35,6 +39,8 @@ const Home = () => {
           ? productRef
           : location.state.scrollTo === "solution"
           ? solutionRef
+          : location.state.scrollTo === "parentcompany"
+          ? parentcompanyRef
           : contactRef;
   
       setTimeout(() => {
@@ -49,7 +55,8 @@ const Home = () => {
       <Navbar overviewRef={overviewRef as RefObject<HTMLDivElement>} 
          productRef={productRef as RefObject<HTMLDivElement>}
          solutionRef={solutionRef as RefObject<HTMLDivElement>}
-         contactRef={contactRef as RefObject<HTMLDivElement>}/>
+         contactRef={contactRef as RefObject<HTMLDivElement>}
+         />
 
       {/* Hero Section with Video Background */}
       <div className="relative w-full h-screen overflow-hidden">
@@ -101,6 +108,9 @@ const Home = () => {
         />
       </div>
 
+
+      
+
       {/* Why Choose ABCDE Section */}
       <section className="bg-white py-16 text-center">
         <h3 className="text-3xl font-bold mb-8 poppins-regular text-gray-900">
@@ -146,6 +156,10 @@ const Home = () => {
         </div>
       </section>
 
+<div ref={parentcompanyRef}>
+  
+     <ParentCompanySection/>
+</div>
       {/* Solution Section */}
       <div  ref={solutionRef}>
         
@@ -156,7 +170,9 @@ const Home = () => {
       <BlogSection />
 
       {/* Footer */}
-      <Footer />
+      <Footer 
+      parentcompanyRef={parentcompanyRef as RefObject<HTMLDivElement>}
+      />
     </>
   );
 };

@@ -1,6 +1,37 @@
+import { useState, useEffect } from "react";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 
+interface NavbarProps {
+  parentcompanyRef: React.RefObject<HTMLDivElement>;
+  
+}
+const Footer:React.FC<NavbarProps> = ({parentcompanyRef}) => {
 
-const Footer = () => {
+  // const [isOpen, setIsOpen] = useState(false);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  // const [visible, setVisible] = useState(true);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.scrollY;
+      // setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
+      setPrevScrollPos(currentScrollPos);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [prevScrollPos]);
+
+  const handleScroll = (ref: React.RefObject<HTMLDivElement>, section: string) => {
+    if (location.pathname !== "/") {
+      navigate("/", { state: { scrollTo: section } });
+    } else {
+      ref.current?.scrollIntoView({ behavior: "smooth" });
+    }
+    // setIsOpen(false);
+  };
   return (
     <>
         <footer className="bg-white text-gray-900 py-12 border-t border-gray-200">
@@ -8,21 +39,51 @@ const Footer = () => {
     
     {/* Column 1: Brand & About */}
     <div>
-      <img src="/images/logo-dark.png" alt="ABCDE Logo" className="w-40 mb-4" />
-      <p className="text-gray-600 text-sm">
-        ABCDE is an open-source electronics platform that empowers everyone to innovate, design, and build electronic solutions effortlessly.
-      </p>
-    </div>
+    <Link to="/" className="flex items-center group">
+  <img 
+    src="/images/mainlogo.jpg" 
+    alt="ABCDE Logo" 
+    className="w-40 mb-4 group-hover:hidden"
+  />
+  <img 
+    src="/images/mainlogo1.jpg" 
+    alt="Hovered ABCDE Logo" 
+    className="w-40 mb-4 hidden group-hover:block"
+  />
+</Link>
+
+  {/* <img src="/images/mainlogo.jpg" alt="ABCDE Logo" className="w-40 mb-4" /> */}
+  <p className="text-gray-600 text-sm">
+    ABCDE is an open-source electronics platform that empowers everyone to innovate, design, and build electronic solutions effortlessly.
+  </p>
+
+  {/* Email Contacts */}
+  <div className="mt-4 space-y-2">
+    <a href="mailto:aiml.abcde@gmail.com" className="text-gray-600 text-sm hover:underline flex items-center gap-2">
+      ✉️ aiml.abcde@gmail.com
+    </a>
+    <a href="mailto:info@sims-esdm.com" className="text-gray-600 text-sm hover:underline flex items-center gap-2">
+      ✉️ info@sims-esdm.com
+    </a>
+    {/* <a href="mailto:contact@abcde.com" className="text-gray-600 text-sm hover:underline flex items-center gap-2">
+      ✉️ contact@abcde.com
+    </a> */}
+  </div>
+</div>
+
 
     {/* Column 2: Quick Links */}
     <div>
       <h4 className="text-lg font-semibold mb-4">Explore</h4>
       <ul className="space-y-2">
-        <li><a href="#" className="text-gray-600 hover:text-black transition">For Professionals</a></li>
-        <li><a href="#" className="text-gray-600 hover:text-black transition">For Education</a></li>
-        <li><a href="#" className="text-gray-600 hover:text-black transition">For Makers</a></li>
+      
+        <li><button onClick={() => handleScroll(parentcompanyRef, "parentcompany")} className="cursor-pointer text-gray-600 hover:text-black transition">
+      About Parent company
+                </button></li>
+        <li><a href="/open-source-projects" className="text-gray-600 hover:text-black transition">Open Source Project</a></li>
+        <li><a href="/industrial-application" className="text-gray-600 hover:text-black transition">For Makers</a></li>
         <li><a href="#" className="text-gray-600 hover:text-black transition">Community</a></li>
-        <li><a href="#" className="text-gray-600 hover:text-black transition">Documentation</a></li>
+        <li><a href="/documentation" className="text-gray-600 hover:text-black transition">Documentation</a></li>
       </ul>
     </div>
 

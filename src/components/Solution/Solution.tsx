@@ -17,9 +17,11 @@ const Solution = () => {
           Access a collection of ready-to-use open-source electronic projects, collaborate with the community, and contribute to innovative solutions.
         </p>
         <div className="mt-4">
-          <button className="px-5 py-2 border border-black rounded-lg font-semibold transition-colors duration-300 hover:bg-black hover:text-white">
+        <a href="/open-source-projects">
+          <button className="cursor-pointer px-5 py-2 border border-black rounded-lg font-semibold transition-colors duration-300 hover:bg-black hover:text-white">
             Explore
           </button>
+          </a>
         </div>
       </div>
       {/* Image Section */}
@@ -39,9 +41,11 @@ const Solution = () => {
           Learn how electronics is transforming industries like automation, healthcare, and smart devices, with real-world case studies and expert insights.
         </p>
         <div className="mt-4">
-          <button className="px-5 py-2 border border-black rounded-lg font-semibold transition-colors duration-300 hover:bg-black hover:text-white">
-            Learn More
+        <a href="/industrial-application">
+          <button className="cursor-pointer px-5 py-2 border border-black rounded-lg font-semibold transition-colors duration-300 hover:bg-black hover:text-white">
+           Learn more
           </button>
+          </a>
         </div>
       </div>
       {/* Image Section */}
@@ -61,9 +65,11 @@ const Solution = () => {
           A step-by-step learning program designed to take you from a beginner to an electronics designer, covering circuit design, prototyping, and microcontrollers.
         </p>
         <div className="mt-4">
-          <button className="px-5 py-2 border border-black rounded-lg font-semibold transition-colors duration-300 hover:bg-black hover:text-white">
+        <a href="/course">
+          <button className="cursor-pointer px-5 py-2 border border-black rounded-lg font-semibold transition-colors duration-300 hover:bg-black hover:text-white">
             Join Now
           </button>
+          </a>
         </div>
       </div>
       {/* Image Section */}

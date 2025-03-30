@@ -50,14 +50,24 @@ const Navbar: React.FC<NavbarProps> = ({
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex justify-between items-center h-16">
         {/* Left - Logo */}
-        <Link to="/" className="flex items-center">
-          <img src="/logo.png" alt="ABCDE Logo" className="h-10 w-auto" />
-        </Link>
+        <Link to="/" className="flex items-center group">
+  <img 
+    src="/images/mainlogo.jpg" 
+    alt="ABCDE Logo" 
+    className="h-10 w-auto group-hover:hidden"
+  />
+  <img 
+    src="/images/mainlogo1.jpg" 
+    alt="Hovered ABCDE Logo" 
+    className="h-10 w-auto hidden group-hover:block"
+  />
+</Link>
+
 
         {/* Center - Menu Button */}
         <button
           onClick={() => setIsOpen(true)}
-          className="flex items-center gap-2 text-black text-lg font-semibold tracking-wide focus:outline-none"
+          className="cursor-pointer flex items-center gap-2 text-black text-lg font-semibold tracking-wide focus:outline-none"
         >
           <Menu size={24} />
           Menu
@@ -66,7 +76,7 @@ const Navbar: React.FC<NavbarProps> = ({
         {/* Right - Contact Button */}
         <button
           onClick={() => handleScroll(contactRef, "contact")}
-          className="px-4 py-2 border-2 border-black-500 text-black-500 text-lg font-semibold rounded-4xl transition duration-300"
+          className="cursor-pointer px-4 py-2 border-1 border-black-500 text-black-500 text-md font-semibold rounded-4xl transition duration-300 hover:bg-black hover:text-white"
         >
           Contact
         </button>
@@ -97,27 +107,27 @@ const Navbar: React.FC<NavbarProps> = ({
               {/* Close Button */}
               <button
                 onClick={() => setIsOpen(false)}
-                className="absolute top-5 left-1/2 transform -translate-x-1/2 flex items-center gap-2 text-black"
+                className="cursor-pointer absolute top-5 left-1/2 transform -translate-x-1/2 flex items-center gap-2 text-black"
               >
                 <X size={28} />
-                <span className="text-2xl font-medium">Close</span>
+                <span className="text-lg font-medium">Close</span>
               </button>
 
               {/* Menu Items */}
               <div className="mt-16 text-3xl font-bold tracking-wider flex flex-col sm:flex-row sm:gap-10 gap-6 text-center">
-                <button onClick={() => handleScroll(overviewRef, "overview")} className="hover:opacity-80 transition">
+                <button onClick={() => handleScroll(overviewRef, "overview")} className="cursor-pointer hover:opacity-80 transition">
                   HOME
                 </button>
-                <button onClick={() => handleScroll(productRef, "product")} className="hover:opacity-80 transition">
+                <button onClick={() => handleScroll(productRef, "product")} className="cursor-pointer hover:opacity-80 transition">
                   PRODUCT
                 </button>
-                <button onClick={() => handleScroll(solutionRef, "solution")} className="hover:opacity-80 transition">
+                <button onClick={() => handleScroll(solutionRef, "solution")} className="cursor-pointer hover:opacity-80 transition">
                   SOLUTION
                 </button>
                 <Link to="/documentation" className="hover:opacity-80 transition">
                   DOCUMENTATION
                 </Link>
-                <button onClick={() => handleScroll(contactRef, "contact")} className="hover:opacity-80 transition">
+                <button onClick={() => handleScroll(contactRef, "contact")} className="cursor-pointer hover:opacity-80 transition">
                   CONTACT
                 </button>
               </div>
@@ -143,9 +153,9 @@ const Navbar: React.FC<NavbarProps> = ({
                 <div className="text-sm flex flex-wrap justify-center gap-4 mt-4">
                   <p className="hover:underline cursor-pointer">PRIVACY POLICY</p>
                   <p className="hover:underline cursor-pointer">TERMS & CONDITIONS</p>
-                  <p className="hover:underline cursor-pointer flex items-center gap-2">
+                  <a href="mailto:aiml.abcde@gmail.com" className="hover:underline cursor-pointer flex items-center gap-2">
                     ✉️ EMAIL
-                  </p>
+                  </a>
                   <p className="hover:underline cursor-pointer flex items-center gap-2">
                     📞 PHONE
                   </p>

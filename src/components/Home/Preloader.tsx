@@ -10,15 +10,15 @@ const Preloader = () => {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 w-full h-full flex flex-col items-center justify-center bg-white z-50"
+      className="fixed top-0 left-0 w-full h-full flex flex-col items-center justify-center  bg-white z-50"
       animate={isExiting ? { y: "-100vh" } : { borderRadius: "0 0 10% 10%" }}
       transition={{ duration: 1, ease: "easeInOut" }}
     >
       {/* Logo */}
       <motion.img
-        src="/logo.png" // Replace with the correct path to your logo
+        src="/images/mainlogo.jpg" // Replace with the correct path to your logo
         alt="Logo"
-        className="w-20 h-20 mb-4"
+        className="m-3 h-20 mb-4"
         initial={{ scale: 1, opacity: 1 }}
         animate={isExiting ? { scale: 0.5, opacity: 0 } : { scale: 1.2 }}
         transition={{ duration: 1, ease: "easeInOut" }}
@@ -26,7 +26,7 @@ const Preloader = () => {
 
       {/* ABCDE Text */}
       <motion.h1
-        className="text-5xl font-bold text-black"
+        className="text-5xl font-bold text-black my-2"
         initial={{ opacity: 1, scale: 1 }}
         animate={isExiting ? { scale: 1 } : { scale: 2 }}
         transition={{ duration: 1, ease: "easeInOut" }}
