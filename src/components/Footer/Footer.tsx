@@ -80,10 +80,21 @@ const Footer:React.FC<NavbarProps> = ({parentcompanyRef}) => {
         <li><button onClick={() => handleScroll(parentcompanyRef, "parentcompany")} className="cursor-pointer text-gray-600 hover:text-black transition">
       About Parent company
                 </button></li>
-        <li><a href="/open-source-projects" className="text-gray-600 hover:text-black transition">Open Source Project</a></li>
-        <li><a href="/industrial-application" className="text-gray-600 hover:text-black transition">For Makers</a></li>
-        <li><a href="#" className="text-gray-600 hover:text-black transition">Community</a></li>
-        <li><a href="/documentation" className="text-gray-600 hover:text-black transition">Documentation</a></li>
+
+                <li><Link to="/open-source-projects" className="text-gray-600 hover:text-black transition">
+                Open Source Project
+                </Link></li>
+                <li><Link to="/industrial-application" className="text-gray-600 hover:text-black transition">
+                Industrial Application
+                </Link></li>
+                <li><Link to="/documentation" className="text-gray-600 hover:text-black transition">
+                Community
+                </Link></li>
+        
+        <li><Link to="/documentation" className="text-gray-600 hover:text-black transition">
+        Documentation
+                </Link></li>
+        
       </ul>
     </div>
 
