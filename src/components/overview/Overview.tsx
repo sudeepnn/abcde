@@ -6,7 +6,7 @@ const Overview = () => {
     
     <div
         className="relative w-full h-screen bg-fixed bg-center bg-cover"
-        style={{ backgroundImage: "url('/images/bgimg.jpg')" }}
+        style={{ backgroundImage: "url('/images/asd.jpg')" }}
       >
         {/* Light Overlay */}
         <div className="w-full h-screen  bg-opacity-80 flex flex-col justify-center items-center text-center  px-6 text-white">

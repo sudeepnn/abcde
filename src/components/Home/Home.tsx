@@ -66,7 +66,7 @@ const Home = () => {
           loop
           muted
           playsInline
-          src="/mainvideo.mp4"
+          src="/GREEN.mp4"
         />
 
         {/* Hero Content */}
@@ -87,6 +87,12 @@ const Home = () => {
           <p className="mt-4 text-lg font-[200]">
             Empowering Everyone to Design in Electronics
           </p>
+          <button
+          
+          className="cursor-pointer my-2 px-6 py-2 border-1 text-black-500 text-md font-semibold rounded-4xl transition duration-300 hover:bg-white hover:text-black"
+        >
+          Explore 
+        </button>
         </div>
       </div>
 
