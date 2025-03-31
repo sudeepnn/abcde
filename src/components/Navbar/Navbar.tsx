@@ -44,24 +44,23 @@ const Navbar: React.FC<NavbarProps> = ({
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 bg-white bg-opacity-80 backdrop-blur-lg shadow-md transition-transform duration-300 ${
-        visible ? "translate-y-0" : "-translate-y-full"
-      }`}
+      className={`fixed top-0 left-0 w-full z-50 bg-white bg-opacity-80 backdrop-blur-lg shadow-md transition-transform duration-300 ${visible ? "translate-y-0" : "-translate-y-full"
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex justify-between items-center h-16">
         {/* Left - Logo */}
         <Link to="/" className="flex items-center group">
-  <img 
-    src="/images/mainlogo.jpg" 
-    alt="ABCDE Logo" 
-    className="h-10 w-auto group-hover:hidden"
-  />
-  <img 
-    src="/images/mainlogo1.jpg" 
-    alt="Hovered ABCDE Logo" 
-    className="h-10 w-auto hidden group-hover:block"
-  />
-</Link>
+          <img
+            src="/images/mainlogo.jpg"
+            alt="ABCDE Logo"
+            className="h-10 w-auto group-hover:hidden"
+          />
+          <img
+            src="/images/mainlogo1.jpg"
+            alt="Hovered ABCDE Logo"
+            className="h-10 w-auto hidden group-hover:block"
+          />
+        </Link>
 
 
         {/* Center - Menu Button */}
@@ -70,16 +69,11 @@ const Navbar: React.FC<NavbarProps> = ({
           className="cursor-pointer flex items-center gap-2 text-black text-lg font-semibold tracking-wide focus:outline-none"
         >
           <Menu size={24} />
-          Menu
+
         </button>
 
         {/* Right - Contact Button */}
-        <button
-          onClick={() => handleScroll(contactRef, "contact")}
-          className="cursor-pointer px-4 py-2 border-1 border-black-500 text-black-500 text-md font-semibold rounded-4xl transition duration-300 hover:bg-black hover:text-white"
-        >
-          Contact
-        </button>
+
       </div>
 
       {/* Overlay and Animated Dropdown Menu */}

@@ -25,14 +25,14 @@ const Preloader = () => {
       />
 
       {/* ABCDE Text */}
-      <motion.h1
+      {/* <motion.h1
         className="text-5xl font-bold text-black my-2"
         initial={{ opacity: 1, scale: 1 }}
         animate={isExiting ? { scale: 1 } : { scale: 2 }}
         transition={{ duration: 1, ease: "easeInOut" }}
       >
         ABCDE
-      </motion.h1>
+      </motion.h1> */}
 
       {/* Tagline */}
       <motion.p

@@ -15,7 +15,7 @@ import ParentCompanySection from "./ParentCompanySection";
 
 const Home = () => {
   const [textIndex, setTextIndex] = useState(0);
-  const texts = ["ABCDE", "Any Buddy Can Design Electronics"];
+  const texts = ["ABCDE©", "Any Buddy Can Design Electronics"];
   const overviewRef = useRef<HTMLDivElement>(null);
   const productRef = useRef<HTMLDivElement>(null);
   const solutionRef = useRef<HTMLDivElement>(null);
@@ -72,16 +72,26 @@ const Home = () => {
         {/* Hero Content */}
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-6">
           <AnimatePresence mode="wait">
-            <motion.h1
-              key={texts[textIndex]}
-              className="text-5xl font-bold"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 20 }}
-              transition={{ duration: 0.8 }}
-            >
-              {texts[textIndex]}
-            </motion.h1>
+          <motion.h1
+  key={texts[textIndex]}
+  className="text-5xl font-bold relative inline-block"
+  initial={{ opacity: 0, y: -20 }}
+  animate={{ opacity: 1, y: 0 }}
+  exit={{ opacity: 0, y: 20 }}
+  transition={{ duration: 0.8 }}
+>
+  {texts[textIndex] === "ABCDE©" ? (
+    <>
+      ABCD
+      <span className="relative inline-block">
+        E
+        <span className="absolute top-[-0.2rem] right-[-1rem] text-xl">©</span>
+      </span>
+    </>
+  ) : (
+    texts[textIndex]
+  )}
+</motion.h1>
           </AnimatePresence>
 
           <p className="mt-4 text-lg font-[200]">

@@ -11,7 +11,7 @@ const HomeWithPreloader = () => {
     if (showPreloader) {
       setTimeout(() => {
         setShowPreloader(false);
-        // localStorage.setItem("hasVisited", "true");
+        // localStorage.setItem("hasVisited", "false");
       }, 6000); // 4s delay + 2s animation
     }
   }, [showPreloader]);
