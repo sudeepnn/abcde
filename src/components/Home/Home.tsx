@@ -36,13 +36,13 @@ const Home = () => {
         location.state.scrollTo === "overview"
           ? overviewRef
           : location.state.scrollTo === "product"
-          ? productRef
-          : location.state.scrollTo === "solution"
-          ? solutionRef
-          : location.state.scrollTo === "parentcompany"
-          ? parentcompanyRef
-          : contactRef;
-  
+            ? productRef
+            : location.state.scrollTo === "solution"
+              ? solutionRef
+              : location.state.scrollTo === "parentcompany"
+                ? parentcompanyRef
+                : contactRef;
+
       setTimeout(() => {
         sectionRef.current?.scrollIntoView({ behavior: "smooth" });
       }, 100);
@@ -52,14 +52,15 @@ const Home = () => {
   return (
     <>
       {/* Navbar with overviewRef for smooth scrolling */}
-      <Navbar overviewRef={overviewRef as RefObject<HTMLDivElement>} 
-         productRef={productRef as RefObject<HTMLDivElement>}
-         solutionRef={solutionRef as RefObject<HTMLDivElement>}
-         contactRef={contactRef as RefObject<HTMLDivElement>}
-         />
+      <Navbar overviewRef={overviewRef as RefObject<HTMLDivElement>}
+        productRef={productRef as RefObject<HTMLDivElement>}
+        solutionRef={solutionRef as RefObject<HTMLDivElement>}
+        contactRef={contactRef as RefObject<HTMLDivElement>}
+      />
 
       {/* Hero Section with Video Background */}
-      <div className="relative w-full h-screen overflow-hidden">
+      <div ref={overviewRef}>
+      <div className="relative w-full h-screen overflow-hidden" >
         <video
           className="absolute top-0 left-0 w-full h-full object-cover -z-10"
           autoPlay
@@ -72,44 +73,45 @@ const Home = () => {
         {/* Hero Content */}
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-6">
           <AnimatePresence mode="wait">
-          <motion.h1
-  key={texts[textIndex]}
-  className="text-5xl font-bold relative inline-block"
-  initial={{ opacity: 0, y: -20 }}
-  animate={{ opacity: 1, y: 0 }}
-  exit={{ opacity: 0, y: 20 }}
-  transition={{ duration: 0.8 }}
->
-  {texts[textIndex] === "ABCDE©" ? (
-    <>
-      ABCD
-      <span className="relative inline-block">
-        E
-        <span className="absolute top-[-0.2rem] right-[-1rem] text-xl">©</span>
-      </span>
-    </>
-  ) : (
-    texts[textIndex]
-  )}
-</motion.h1>
+            <motion.h1
+              key={texts[textIndex]}
+              className="text-5xl font-bold relative inline-block"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ duration: 0.8 }}
+            >
+              {texts[textIndex] === "ABCDE©" ? (
+                <>
+                  ABCD
+                  <span className="relative inline-block">
+                    E
+                    <span className="absolute top-[-0.2rem] right-[-1rem] text-xl">©</span>
+                  </span>
+                </>
+              ) : (
+                texts[textIndex]
+              )}
+            </motion.h1>
           </AnimatePresence>
 
           <p className="mt-4 text-lg font-[200]">
             Empowering Everyone to Design in Electronics
           </p>
           <button
-          
-          className="cursor-pointer my-2 px-6 py-2 border-1 text-black-500 text-md font-semibold rounded-4xl transition duration-300 hover:bg-white hover:text-black"
-        >
-          Explore 
-        </button>
+            onClick={() => solutionRef.current?.scrollIntoView({ behavior: "smooth" })}
+            className="cursor-pointer my-2 px-6 py-2 border-1 text-black-500 text-md font-semibold rounded-4xl transition duration-300 hover:bg-white hover:text-black"
+          >
+            Explore
+          </button>
         </div>
+      </div>
       </div>
 
       {/* Overview Section */}
-      <div ref={overviewRef}>
+      
         <Overview />
-      </div>
+      
 
       {/* Flip Card - Centered and Styled */}
       <div className="flex justify-center py-10" ref={productRef}>
@@ -125,7 +127,7 @@ const Home = () => {
       </div>
 
 
-      
+
 
       {/* Why Choose ABCDE Section */}
       <section className="bg-white py-16 text-center">
@@ -172,22 +174,22 @@ const Home = () => {
         </div>
       </section>
 
-<div ref={parentcompanyRef}>
-  
-     <ParentCompanySection/>
-</div>
+      <div ref={parentcompanyRef}>
+
+        <ParentCompanySection />
+      </div>
       {/* Solution Section */}
-      <div  ref={solutionRef}>
-        
-      <Solution />
+      <div ref={solutionRef}>
+
+        <Solution />
       </div>
 
       {/* Blog Section */}
       <BlogSection />
 
       {/* Footer */}
-      <Footer 
-      parentcompanyRef={parentcompanyRef as RefObject<HTMLDivElement>}
+      <Footer
+        parentcompanyRef={parentcompanyRef as RefObject<HTMLDivElement>}
       />
     </>
   );

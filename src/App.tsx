@@ -9,6 +9,7 @@ import HomeWithPreloader from './components/Home/HomeWithPreloader';
 import OpenSourceProjects from './components/Solution/Projects';
 import Industrialapplication from './components/Solution/Industrialapplication';
 import CourseEnrollment from './components/Solution/Course';
+import BlogList from './components/Blog/Bloglist';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Route path="/open-source-projects" element={<OpenSourceProjects />} />
         <Route path="/course" element={<CourseEnrollment />} />
         <Route path="/documentation" element={<Installatiion />} />
+        <Route path="/blogs" element={<BlogList />} />
       </Routes>
     </Router>
   );
