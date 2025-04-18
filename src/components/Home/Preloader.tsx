@@ -16,7 +16,7 @@ const Preloader = () => {
     >
       {/* Logo */}
       <motion.img
-        src="/images/mainlogo.jpg" // Replace with the correct path to your logo
+        src="/images/mainlogo.png" // Replace with the correct path to your logo
         alt="Logo"
         className="m-3 h-20 mb-4"
         initial={{ scale: 1, opacity: 1 }}

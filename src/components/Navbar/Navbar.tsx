@@ -49,17 +49,13 @@ const Navbar: React.FC<NavbarProps> = ({
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex justify-between items-center h-16">
         {/* Left - Logo */}
-        <Link to="/" className="flex items-center group">
+        <Link to="/" className="flex items-center ">
           <img
-            src="/images/mainlogo.jpg"
+            src="/images/mainlogo.png"
             alt="ABCDE Logo"
-            className="h-10 w-auto group-hover:hidden"
+            className="h-10 w-auto "
           />
-          <img
-            src="/images/mainlogo1.jpg"
-            alt="Hovered ABCDE Logo"
-            className="h-10 w-auto hidden group-hover:block"
-          />
+          
         </Link>
 
 

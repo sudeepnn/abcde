@@ -49,17 +49,13 @@ const Footer: React.FC<NavbarProps> = ({ parentcompanyRef }) => {
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-8">
         {/* Column 1: Brand & About */}
         <div>
-          <Link to="/" className="flex items-center group">
+          <Link to="/" className="flex items-center ">
             <img
-              src="/images/mainlogo.jpg"
+              src="/images/mainlogo.png"
               alt="ABCDE Logo"
-              className="w-40 mb-4 group-hover:hidden"
+              className="w-40 mb-4 "
             />
-            <img
-              src="/images/mainlogo1.jpg"
-              alt="Hovered ABCDE Logo"
-              className="w-40 mb-4 hidden group-hover:block"
-            />
+            
           </Link>
           <p className="text-gray-600 text-sm">
             ABCDE is an open-source electronics platform that empowers
