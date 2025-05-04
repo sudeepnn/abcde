@@ -8,7 +8,7 @@ import Footer from "../Footer/Footer";
 import { User, Zap, Code2 } from "lucide-react";
 import FlipCard from "./Productfilp";
 import BlogSection from "../Blog/BlogSection";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import ParentCompanySection from "./ParentCompanySection";
 
 
@@ -186,6 +186,27 @@ const Home = () => {
 
       {/* Blog Section */}
       <BlogSection />
+
+{/* {community} */}
+      
+
+    <div className="relative bg-white py-20 overflow-hidden text-center">
+      {/* Faded Background Text */}
+      <h1 className="absolute inset-0 text-[25vw] sm:text-[20vw] md:text-[18vw] lg:text-[16vw] font-extrabold text-gray-200 opacity-20 flex justify-center items-center select-none pointer-events-none">
+  ABCDE
+</h1>
+
+      {/* Foreground Content */}
+      <h2 className="text-2xl font-semibold mb-2">Have a Question?</h2>
+      <p className="text-gray-600 mb-4">Join the community and get answers from Admins.</p>
+      <Link to="/community">
+      <button
+        
+        className="cursor-pointer px-5 py-2 border border-black rounded-lg font-semibold transition-colors duration-300 hover:bg-black hover:text-white"
+      >
+        Ask a Question
+      </button></Link>
+    </div>
 
       {/* Footer */}
       <Footer

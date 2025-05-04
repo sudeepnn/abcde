@@ -14,7 +14,7 @@ const Navbar: React.FC<NavbarProps> = ({
   overviewRef,
   productRef,
   solutionRef,
-  contactRef,
+  
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
@@ -117,9 +117,12 @@ const Navbar: React.FC<NavbarProps> = ({
                 <Link to="/documentation" className="hover:opacity-80 transition">
                   DOCUMENTATION
                 </Link>
-                <button onClick={() => handleScroll(contactRef, "contact")} className="cursor-pointer hover:opacity-80 transition">
+                <Link to="/community" className="hover:opacity-80 transition">
+                  COMMUNITY
+                </Link>
+                {/* <button onClick={() => handleScroll(contactRef, "contact")} className="cursor-pointer hover:opacity-80 transition">
                   CONTACT
-                </button>
+                </button> */}
               </div>
 
               {/* Social Icons */}

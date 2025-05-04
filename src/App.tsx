@@ -10,6 +10,7 @@ import OpenSourceProjects from './components/Solution/Projects';
 import Industrialapplication from './components/Solution/Industrialapplication';
 import CourseEnrollment from './components/Solution/Course';
 import BlogList from './components/Blog/Bloglist';
+import Forum from './components/Forum/Forum';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
         <Route path="/course" element={<CourseEnrollment />} />
         <Route path="/documentation" element={<Installatiion />} />
         <Route path="/blogs" element={<BlogList />} />
+        <Route path="/community" element={<Forum />} />
       </Routes>
     </Router>
   );

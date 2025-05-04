@@ -45,6 +45,7 @@ const Footer: React.FC<NavbarProps> = ({ parentcompanyRef }) => {
   };
 
   return (
+    <>
     <footer className="bg-white text-gray-900 py-12 border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-8">
         {/* Column 1: Brand & About */}
@@ -96,7 +97,7 @@ const Footer: React.FC<NavbarProps> = ({ parentcompanyRef }) => {
               </Link>
             </li>
             <li>
-              <Link to="/documentation" className="text-gray-600 hover:text-black transition">
+              <Link to="/community" className="text-gray-600 hover:text-black transition">
                 Community
               </Link>
             </li>
@@ -182,6 +183,11 @@ const Footer: React.FC<NavbarProps> = ({ parentcompanyRef }) => {
         <p>© 2025 ABCDE. All rights reserved.</p>
       </div>
     </footer>
+    
+
+
+    </>
+    
   );
 };
 
