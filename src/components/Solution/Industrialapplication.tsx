@@ -25,7 +25,7 @@ const Industrialapplication = () => {
     const fetchProjects = async () => {
       try {
         const response = await fetch(
-          "https://abcdeserver.onrender.com/api/Osproject/marker/application"
+          "https://api.abcde.help/api/Osproject/marker/application"
         );
         const data = await response.json();
         setProjects(data);

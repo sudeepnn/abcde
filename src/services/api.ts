@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Base URL for your API
-const API_URL = 'https://abcdeforumserver.onrender.com/api/forum'; // Update the port number if different
+const API_URL = 'https://api2.abcde.help/api/forum'; // Update the port number if different
 
 // Axios instance to set base URL and default headers
 const api = axios.create({

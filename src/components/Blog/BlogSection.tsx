@@ -43,7 +43,7 @@ const BlogSection = () => {
 
   useEffect(() => {
     axios
-      .get("https://abcdeserver.onrender.com/api/blogs/latest")
+      .get("https://api.abcde.help/api/blogs/latest")
       .then((res) => setBlogs(res.data))
       .catch((err) => console.error("Error fetching blogs:", err));
   }, []);
@@ -69,7 +69,7 @@ const BlogSection = () => {
 
   const fetchBlog = async (id: string) => {
     try {
-      const res = await axios.get(`https://abcdeserver.onrender.com/api/blogs/${id}`);
+      const res = await axios.get(`https://api.abcde.help/api/blogs/${id}`);
       setSelectedBlog(res.data);
       setModalIsOpen(true);
     } catch (error) {
@@ -89,7 +89,7 @@ const BlogSection = () => {
       setLoadingForm(true);
     
     try {
-      const response = await axios.post("https://abcdeserver.onrender.com/api/blogvisits/", {
+      const response = await axios.post("https://api.abcde.help/api/blogvisits/", {
         username,
         email,
         designation,

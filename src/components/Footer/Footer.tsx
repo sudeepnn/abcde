@@ -21,7 +21,7 @@ const Footer: React.FC<NavbarProps> = ({ parentcompanyRef }) => {
     setLoading(true); // Show loading indicator
 
     try {
-      const response = await fetch("https://abcdeserver.onrender.com/api/users", {
+      const response = await fetch("https://api.abcde.help/api/users", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

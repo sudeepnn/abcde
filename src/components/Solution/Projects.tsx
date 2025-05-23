@@ -24,7 +24,7 @@ const OpenSourceProjects = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await fetch("https://abcdeserver.onrender.com/api/Osproject/marker/opensource");
+        const response = await fetch("https://api.abcde.help/api/Osproject/marker/opensource");
         const data = await response.json();
         setProjects(data);
       } catch (error) {
