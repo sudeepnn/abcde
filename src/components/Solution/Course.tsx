@@ -41,7 +41,6 @@ const CourseEnrollment = () => {
   const productRef = useRef<HTMLDivElement>(null);
   const solutionRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
-  const parentcompanyRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -53,8 +52,6 @@ const CourseEnrollment = () => {
           ? productRef
           : location.state.scrollTo === "solution"
           ? solutionRef
-          : location.state.scrollTo === "parentcompany"
-          ? parentcompanyRef
           : contactRef;
 
       setTimeout(() => {
@@ -113,7 +110,7 @@ const CourseEnrollment = () => {
           </div>
         </div>
       </section>
-      <Footer parentcompanyRef={parentcompanyRef as RefObject<HTMLDivElement>} />
+      <Footer />
     </>
   );
 };

@@ -18,7 +18,6 @@ const OpenSourceProjects = () => {
   const productRef = useRef<HTMLDivElement>(null);
   const solutionRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
-  const parentcompanyRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -45,8 +44,6 @@ const OpenSourceProjects = () => {
           ? productRef
           : location.state.scrollTo === "solution"
           ? solutionRef
-          : location.state.scrollTo === "parentcompany"
-          ? parentcompanyRef
           : contactRef;
 
       setTimeout(() => {
@@ -99,7 +96,7 @@ const OpenSourceProjects = () => {
           )}
         </div>
       </section>
-      <Footer parentcompanyRef={parentcompanyRef as RefObject<HTMLDivElement>} />
+      <Footer/>
     </>
   );
 };

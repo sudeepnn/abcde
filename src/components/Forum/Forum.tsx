@@ -10,7 +10,6 @@ const Forum = () => {
     const productRef = useRef<HTMLDivElement>(null);
     const solutionRef = useRef<HTMLDivElement>(null);
     const contactRef = useRef<HTMLDivElement>(null);
-    const parentcompanyRef = useRef<HTMLDivElement>(null);
     const [loading, setLoading] = useState(false);
 
 
@@ -36,8 +35,6 @@ const Forum = () => {
                         ? productRef
                         : location.state.scrollTo === "solution"
                             ? solutionRef
-                            : location.state.scrollTo === "parentcompany"
-                                ? parentcompanyRef
                                 : contactRef;
 
             setTimeout(() => {
@@ -333,7 +330,7 @@ const Forum = () => {
             </div>
             {isModalOpen && (
         <UserDetailsModal onSubmit={handleModalSubmit} onClose={handleModalClose} /> )}
-            <Footer parentcompanyRef={parentcompanyRef as React.RefObject<HTMLDivElement>} />
+            <Footer />
         </>
     );
 };

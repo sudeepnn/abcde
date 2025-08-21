@@ -1,11 +1,9 @@
 import { useState } from "react";
 import {   Link } from "react-router-dom";
 
-interface NavbarProps {
-  parentcompanyRef: React.RefObject<HTMLDivElement>;
-}
 
-const Footer: React.FC<NavbarProps> = ({ parentcompanyRef }) => {
+
+const Footer: React.FC = ({  }) => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false); // Loading state
@@ -78,14 +76,6 @@ const Footer: React.FC<NavbarProps> = ({ parentcompanyRef }) => {
         <div>
           <h4 className="text-lg font-semibold mb-4">Explore</h4>
           <ul className="space-y-2">
-            <li>
-              <button
-                onClick={() => parentcompanyRef.current?.scrollIntoView({ behavior: "smooth" })}
-                className="cursor-pointer text-gray-600 hover:text-black transition"
-              >
-                About Parent Company
-              </button>
-            </li>
             <li>
               <Link to="/open-source-projects" className="text-gray-600 hover:text-black transition">
                 Open Source Project
