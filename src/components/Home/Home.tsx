@@ -9,7 +9,6 @@ import { User, Zap, Code2 } from "lucide-react";
 import FlipCard from "./Productfilp";
 import BlogSection from "../Blog/BlogSection";
 import { Link, useLocation } from "react-router-dom";
-import ParentCompanySection from "./ParentCompanySection";
 
 
 
