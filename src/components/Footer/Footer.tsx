@@ -66,9 +66,7 @@ const Footer: React.FC = ({  }) => {
             <a href="mailto:aiml.abcde@gmail.com" className="text-gray-600 text-sm hover:underline flex items-center gap-2">
               ✉️ aiml.abcde@gmail.com
             </a>
-            <a href="mailto:info@sims-esdm.com" className="text-gray-600 text-sm hover:underline flex items-center gap-2">
-              ✉️ info@sims-esdm.com
-            </a>
+        
           </div>
         </div>
 
